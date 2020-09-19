@@ -14,6 +14,10 @@ This software enables a "Voting Ambassador" workflow for get-out-the-vote campai
 | |____icons
 ```
 
+### Prerequisites
+
+- Node. We recommend installing via [Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating).
+
 ### Installation
 
 Before starting the server, copy .env.example to .env.
