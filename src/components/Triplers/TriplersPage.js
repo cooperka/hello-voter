@@ -11,8 +11,8 @@ import Loading from '../Loading'
 
 import { AppContext } from '../../api/AppContext'
 
-const { 
-  REACT_APP_TRIPLER_PAYMENT_AMT, 
+const {
+  REACT_APP_TRIPLER_PAYMENT_AMT,
   REACT_APP_AMBASSADOR_PAYMENT_AMT,
   REACT_APP_NONVOLUNTEER_PAYMENT_FEATURE
 } = process.env
@@ -119,16 +119,16 @@ const ParagraphMinHeight72 = styled(Paragraph)`
   }
 `
 
-const TriplerRow = ({ 
-  name, 
-  address, 
-  id, 
-  unconfirmed, 
-  pending, 
-  confirmed, 
+const TriplerRow = ({
+  name,
+  address,
+  id,
+  unconfirmed,
+  pending,
+  confirmed,
   ambassadorConfirmed,
   remindTripler,
-  deleteTripler 
+  deleteTripler
 }) => (
   <TriplerRowStyled>
     <TriplerColumnTruncate>
@@ -145,8 +145,8 @@ const TriplerRow = ({
           Add Info <ChevronRight16 />
         </Button>
         <OverflowMenuStyled id="tripler-more-menu">
-          <OverflowMenuItem 
-            itemText="Remove Vote Tripler from list" 
+          <OverflowMenuItem
+            itemText="Remove Vote Tripler from list"
             primaryFocus
             onClick={() => deleteTripler(id)}
           />
@@ -160,7 +160,7 @@ const TriplerRow = ({
           Remind
         </Button>
       }
-      {/* 
+      {/*
         FIXME: Hide payments `REACT_APP_NONVOLUNTEER_PAYMENT_FEATURE` & `REACT_APP_PAYMENT_FEATURE`
         with Boolean rather than "true" and empty .env field
       */}
@@ -178,12 +178,12 @@ const TriplerRow = ({
   </TriplerRowStyled>
 )
 
-const Triplers = ({ 
-  unconfirmed, 
-  pending, 
-  confirmed, 
-  remindTripler, 
-  limit, 
+const Triplers = ({
+  unconfirmed,
+  pending,
+  confirmed,
+  remindTripler,
+  limit,
   deleteTripler,
   ambassadors
 }) => {
@@ -358,7 +358,7 @@ export default () => {
   )
 }
 
-const TriplersPage = ({ triplers, remindTripler, limit, deleteTripler }) => {
+export const TriplersPage = ({ triplers, remindTripler, limit, deleteTripler }) => {
   const confirmed = triplers.filter((tripler) => tripler.status === 'confirmed')
   const pending = triplers.filter((tripler) => tripler.status === 'pending')
   const unconfirmed = triplers.filter((tripler) => tripler.status === 'unconfirmed')
